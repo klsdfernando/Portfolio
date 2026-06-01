@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio — Product Designer & UI/UX Expert</title>
-  <meta name="description" content="Experienced Product Designer with 18+ years in the field, collaborating with various companies and startups." />
+  <title>Sushan Fernando — ML Researcher, Cybersecurity & Full Stack Developer</title>
+  <meta name="description" content="Passionate technologist focused on AI model development, cybersecurity research, full stack development, and IoT systems. Undergraduate at University of Kelaniya." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,700;1,700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
   <link rel="stylesheet" href="/src/style.css" />
 </head>
 <body>
@@ -22,7 +23,7 @@
             <polyline points="22 8.5 12 15.5 2 8.5"></polyline>
           </svg>
         </div>
-        <span>Portfolio</span>
+        <span>Sushan.</span>
       </a>
       <ul class="nav-links" id="nav-links">
         <li><a href="#" class="nav-link active" id="nav-home">Home</a></li>
@@ -41,6 +42,9 @@
 
   <!-- ============ HERO SECTION ============ -->
   <section class="hero" id="hero-section">
+    <!-- Animated particle canvas -->
+    <canvas id="hero-particles" class="hero-particles"></canvas>
+
     <div class="hero-container">
       <!-- Left Content -->
       <div class="hero-content" id="hero-content">
@@ -49,23 +53,54 @@
           <span>Hello There!</span>
         </div>
         <h1 class="hero-title" id="hero-title">
-          I'm <span class="highlight-name">Your Name,</span><br/>
-          Product Designer<br/>
-          Based in USA.
+          I'm <span class="highlight-name">Sushan Fernando,</span><br/>
+          <span class="hero-typed-wrapper" id="hero-typed-wrapper">
+            <span class="hero-typed-text" id="hero-typed-text"></span>
+            <span class="typed-cursor">|</span>
+          </span>
         </h1>
-        <p class="hero-description" id="hero-description">
-          I'm an experienced Product Designer with 18+ years in the field, collaborating with various companies and startups.
+        <p class="hero-role-badge" id="hero-role-badge">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+            <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+          </svg>
+          <span>B.Sc (Hons) Electronics & Computer Science — University of Kelaniya</span>
         </p>
+        <p class="hero-description" id="hero-description">
+          Passionate technologist focused on AI model development, custom model training, and the intersection of Cybersecurity and IoT systems. I strive to build secure, intelligent, and scalable solutions that bridge the gap between software and hardware.
+        </p>
+        <!-- Stats -->
+        <div class="hero-stats" id="hero-stats">
+          <div class="hero-stat">
+            <div class="stat-value"><span class="stat-number" data-target="15">0</span><span class="stat-plus">+</span></div>
+            <span class="stat-label">Projects Completed</span>
+          </div>
+          <div class="hero-stat">
+            <div class="stat-value"><span class="stat-number" data-target="8">0</span><span class="stat-plus">+</span></div>
+            <span class="stat-label">Technologies</span>
+          </div>
+          <div class="hero-stat">
+            <div class="stat-value"><span class="stat-number" data-target="3">0</span><span class="stat-plus">+</span></div>
+            <span class="stat-label">Years of Experience</span>
+          </div>
+        </div>
+
         <div class="hero-buttons" id="hero-buttons">
-          <a href="#" class="btn-primary" id="btn-portfolio">
-            <span>View My Portfolio</span>
+          <a href="#" class="btn-primary" id="btn-download-cv">
+            <span>Download CV</span>
             <div class="btn-icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <polyline points="19 12 12 19 5 12"></polyline>
               </svg>
             </div>
           </a>
-          <a href="#" class="btn-secondary" id="btn-hire">Hire Me</a>
+          <a href="https://github.com/klsdfernando" target="_blank" rel="noopener noreferrer" class="btn-github" id="btn-github">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+            </svg>
+            <span>GitHub</span>
+          </a>
         </div>
       </div>
 
@@ -76,19 +111,25 @@
 
         <!-- Main image -->
         <div class="hero-image-wrapper" id="hero-image-wrapper">
-          <img src="/src/assets/hero-placeholder.svg" alt="Profile Photo" class="hero-image" id="hero-image" />
+          <img src="https://ik.imagekit.io/k4ydbcc22/Portfolio/my_image.png" alt="Sushan Fernando" class="hero-image" id="hero-image" />
         </div>
 
-        <!-- Floating badge: UI/UX Designer -->
-        <div class="floating-badge badge-uiux" id="badge-uiux">
+        <!-- Floating badge: ML Researcher -->
+        <div class="floating-badge badge-ml" id="badge-ml">
           <div class="badge-dot"></div>
-          <span>UI/UX Designer</span>
+          <span>🧠 ML Researcher</span>
         </div>
 
-        <!-- Floating badge: Product Designer -->
-        <div class="floating-badge badge-product" id="badge-product">
-          <div class="badge-dot"></div>
-          <span>Product Designer</span>
+        <!-- Floating badge: Cybersecurity -->
+        <div class="floating-badge badge-cyber" id="badge-cyber">
+          <div class="badge-dot badge-dot-cyber"></div>
+          <span>🔐 Cybersecurity</span>
+        </div>
+
+        <!-- Floating badge: IoT -->
+        <div class="floating-badge badge-iot" id="badge-iot">
+          <div class="badge-dot badge-dot-iot"></div>
+          <span>⚡ IoT Enthusiast</span>
         </div>
 
         <!-- Rotating circle text -->
@@ -99,7 +140,7 @@
             </defs>
             <text>
               <textPath href="#circlePath" class="circle-text">
-                HIRE ME NOW • HIRE ME NOW • HIRE ME NOW •
+                LET'S CONNECT • LET'S CONNECT • LET'S CONNECT •
               </textPath>
             </text>
           </svg>
@@ -116,27 +157,586 @@
     <!-- Decorative shapes -->
     <div class="hero-decor-circle-1" id="hero-decor-1"></div>
     <div class="hero-decor-circle-2" id="hero-decor-2"></div>
+    <div class="hero-decor-triangle" id="hero-decor-3"></div>
   </section>
 
   <!-- ============ SKILLS MARQUEE ============ -->
   <div class="skills-marquee" id="skills-marquee">
     <div class="marquee-track">
       <div class="marquee-content">
-        <span class="marquee-item"><span class="marquee-star">✦</span> App Design</span>
-        <span class="marquee-item"><span class="marquee-star">✦</span> Website Design</span>
-        <span class="marquee-item"><span class="marquee-star">✦</span> Dashboard</span>
-        <span class="marquee-item"><span class="marquee-star">✦</span> Wireframe</span>
-        <span class="marquee-item"><span class="marquee-star">✦</span> UI/UX Design</span>
-        <span class="marquee-item"><span class="marquee-star">✦</span> Branding</span>
-        <span class="marquee-item"><span class="marquee-star">✦</span> App Design</span>
-        <span class="marquee-item"><span class="marquee-star">✦</span> Website Design</span>
-        <span class="marquee-item"><span class="marquee-star">✦</span> Dashboard</span>
-        <span class="marquee-item"><span class="marquee-star">✦</span> Wireframe</span>
-        <span class="marquee-item"><span class="marquee-star">✦</span> UI/UX Design</span>
-        <span class="marquee-item"><span class="marquee-star">✦</span> Branding</span>
+        <span class="marquee-item"><span class="marquee-star">✦</span> Machine Learning</span>
+        <span class="marquee-item"><span class="marquee-star">✦</span> Cybersecurity</span>
+        <span class="marquee-item"><span class="marquee-star">✦</span> Full Stack Dev</span>
+        <span class="marquee-item"><span class="marquee-star">✦</span> IoT Systems</span>
+        <span class="marquee-item"><span class="marquee-star">✦</span> AI Agents</span>
+        <span class="marquee-item"><span class="marquee-star">✦</span> ESP32 / Arduino</span>
+        <span class="marquee-item"><span class="marquee-star">✦</span> Networking</span>
+        <span class="marquee-item"><span class="marquee-star">✦</span> Model Training</span>
+        <span class="marquee-item"><span class="marquee-star">✦</span> Machine Learning</span>
+        <span class="marquee-item"><span class="marquee-star">✦</span> Cybersecurity</span>
+        <span class="marquee-item"><span class="marquee-star">✦</span> Full Stack Dev</span>
+        <span class="marquee-item"><span class="marquee-star">✦</span> IoT Systems</span>
+        <span class="marquee-item"><span class="marquee-star">✦</span> AI Agents</span>
+        <span class="marquee-item"><span class="marquee-star">✦</span> ESP32 / Arduino</span>
+        <span class="marquee-item"><span class="marquee-star">✦</span> Networking</span>
+        <span class="marquee-item"><span class="marquee-star">✦</span> Model Training</span>
       </div>
     </div>
   </div>
+
+
+
+  <!-- ============ EXPERTISE & SERVICES SECTION ============ -->
+  <section class="expertise" id="expertise-section">
+    <div class="expertise-container">
+      <div class="expertise-header">
+        <div class="about-label">
+          <span class="about-label-line"></span>
+          <span>Expertise & Services</span>
+        </div>
+        <h2 class="about-heading">
+          What I Bring <br/>
+          <span class="text-white">To The Table</span>
+        </h2>
+      </div>
+
+      <div class="expertise-grid">
+
+        <!-- LEFT COLUMN -->
+        <div class="expertise-left">
+
+          <!-- Services Slideshow -->
+          <div class="services-box" id="services-box">
+            <h3 class="panel-title">Services I Provide</h3>
+            <div class="services-slider" id="services-slider">
+              <div class="service-slide active" data-index="0">
+                <div class="service-icon">🤖</div>
+                <h4 class="service-name">AI / ML Development</h4>
+                <p class="service-desc">Custom model training, fine-tuning LLMs with LoRA/QLoRA, building multi-agent systems, and deploying intelligent pipelines for real-world applications.</p>
+              </div>
+              <div class="service-slide" data-index="1">
+                <div class="service-icon">🌐</div>
+                <h4 class="service-name">Full Stack Web Development</h4>
+                <p class="service-desc">End-to-end web applications using React, Next.js, Node.js, and modern backends. From REST APIs to real-time dashboards with responsive UI.</p>
+              </div>
+              <div class="service-slide" data-index="2">
+                <div class="service-icon">🔐</div>
+                <h4 class="service-name">Cybersecurity Solutions</h4>
+                <p class="service-desc">Penetration testing, vulnerability assessment, network security auditing, and building secure-by-design architectures for production systems.</p>
+              </div>
+              <div class="service-slide" data-index="3">
+                <div class="service-icon">⚡</div>
+                <h4 class="service-name">IoT & Embedded Systems</h4>
+                <p class="service-desc">ESP32 & Arduino firmware, PCB design with Altium, sensor integration, wireless protocols, and bridging hardware with cloud platforms.</p>
+              </div>
+              <div class="service-slide" data-index="4">
+                <div class="service-icon">📱</div>
+                <h4 class="service-name">Mobile App Development</h4>
+                <p class="service-desc">Cross-platform mobile applications using Flutter and Dart, with native-like performance, smooth UI animations, and backend integration.</p>
+              </div>
+            </div>
+            <div class="services-dots" id="services-dots"></div>
+          </div>
+
+          <!-- Specialized Skills -->
+          <div class="skills-box" id="skills-box">
+            <h3 class="panel-title">Specialized Skills</h3>
+            <div class="skills-slider" id="skills-slider">
+              <!-- JS will group these into slides dynamically -->
+              <div class="skill-item" data-skill>
+                <img src="https://skillicons.dev/icons?i=arduino" alt="Altium" class="skill-icon-img" />
+                <div class="skill-info">
+                  <span class="skill-name">Altium Designer</span>
+                  <span class="skill-brief">PCB design & schematic capture</span>
+                </div>
+              </div>
+              <div class="skill-item" data-skill>
+                <img src="https://skillicons.dev/icons?i=linux" alt="Linux" class="skill-icon-img" />
+                <div class="skill-info">
+                  <span class="skill-name">Linux Administration</span>
+                  <span class="skill-brief">Server management & shell scripting</span>
+                </div>
+              </div>
+              <div class="skill-item" data-skill>
+                <img src="https://skillicons.dev/icons?i=git" alt="Git" class="skill-icon-img" />
+                <div class="skill-info">
+                  <span class="skill-name">Git & Version Control</span>
+                  <span class="skill-brief">Branching strategies & CI/CD pipelines</span>
+                </div>
+              </div>
+              <div class="skill-item" data-skill>
+                <img src="https://skillicons.dev/icons?i=docker" alt="Docker" class="skill-icon-img" />
+                <div class="skill-info">
+                  <span class="skill-name">Containerization</span>
+                  <span class="skill-brief">Docker, microservices & deployments</span>
+                </div>
+              </div>
+              <div class="skill-item" data-skill>
+                <img src="https://skillicons.dev/icons?i=raspberrypi" alt="Raspberry Pi" class="skill-icon-img" />
+                <div class="skill-info">
+                  <span class="skill-name">Embedded Linux</span>
+                  <span class="skill-brief">Raspberry Pi, edge computing & IoT gateways</span>
+                </div>
+              </div>
+              <div class="skill-item" data-skill>
+                <img src="https://skillicons.dev/icons?i=aws" alt="AWS" class="skill-icon-img" />
+                <div class="skill-info">
+                  <span class="skill-name">Cloud Architecture</span>
+                  <span class="skill-brief">AWS, GCP deployments & serverless</span>
+                </div>
+              </div>
+            </div>
+            <div class="skills-dots" id="skills-dots"></div>
+          </div>
+        </div>
+
+        <!-- RIGHT COLUMN — Tech Stack Table -->
+        <div class="expertise-right">
+          <div class="techstack-box">
+            <h3 class="panel-title">Tech Stack</h3>
+            <div class="tech-stack-table">
+              <!-- Languages -->
+              <div class="tech-row tool-card-wrapper">
+                <div class="tech-category">Languages</div>
+                <div class="tech-icons">
+                  <img src="https://skillicons.dev/icons?i=c" alt="C" class="tech-icon-img" title="C" />
+                  <img src="https://skillicons.dev/icons?i=cs" alt="C#" class="tech-icon-img" title="C#" />
+                  <img src="https://skillicons.dev/icons?i=cpp" alt="C++" class="tech-icon-img" title="C++" />
+                  <img src="https://skillicons.dev/icons?i=py" alt="Python" class="tech-icon-img" title="Python" />
+                  <img src="https://skillicons.dev/icons?i=js" alt="JavaScript" class="tech-icon-img" title="JavaScript" />
+                  <img src="https://skillicons.dev/icons?i=ts" alt="TypeScript" class="tech-icon-img" title="TypeScript" />
+                  <img src="https://skillicons.dev/icons?i=java" alt="Java" class="tech-icon-img" title="Java" />
+                  <img src="https://skillicons.dev/icons?i=dart" alt="Dart" class="tech-icon-img" title="Dart" />
+                  <img src="https://skillicons.dev/icons?i=php" alt="PHP" class="tech-icon-img" title="PHP" />
+                  <img src="https://skillicons.dev/icons?i=html" alt="HTML5" class="tech-icon-img" title="HTML5" />
+                  <img src="https://skillicons.dev/icons?i=css" alt="CSS3" class="tech-icon-img" title="CSS3" />
+                  <img src="https://skillicons.dev/icons?i=bash" alt="Bash" class="tech-icon-img" title="Bash" />
+                </div>
+              </div>
+
+              <!-- Frameworks -->
+              <div class="tech-row tool-card-wrapper">
+                <div class="tech-category">Frameworks</div>
+                <div class="tech-icons">
+                  <img src="https://skillicons.dev/icons?i=react" alt="React" class="tech-icon-img" title="React" />
+                  <img src="https://skillicons.dev/icons?i=nextjs" alt="Next.js" class="tech-icon-img" title="Next.js" />
+                  <img src="https://skillicons.dev/icons?i=nodejs" alt="Node.js" class="tech-icon-img" title="Node.js" />
+                  <img src="https://skillicons.dev/icons?i=express" alt="Express" class="tech-icon-img" title="Express" />
+                  <img src="https://skillicons.dev/icons?i=django" alt="Django" class="tech-icon-img" title="Django" />
+                  <img src="https://skillicons.dev/icons?i=flutter" alt="Flutter" class="tech-icon-img" title="Flutter" />
+                  <img src="https://skillicons.dev/icons?i=spring" alt="Spring" class="tech-icon-img" title="Spring" />
+                  <img src="https://skillicons.dev/icons?i=vite" alt="Vite" class="tech-icon-img" title="Vite" />
+                  <img src="https://skillicons.dev/icons?i=vue" alt="Vue" class="tech-icon-img" title="Vue" />
+                </div>
+              </div>
+
+              <!-- Databases -->
+              <div class="tech-row tool-card-wrapper">
+                <div class="tech-category">Databases</div>
+                <div class="tech-icons">
+                  <img src="https://skillicons.dev/icons?i=mongodb" alt="MongoDB" class="tech-icon-img" title="MongoDB" />
+                  <img src="https://skillicons.dev/icons?i=mysql" alt="MySQL" class="tech-icon-img" title="MySQL" />
+                  <img src="https://skillicons.dev/icons?i=sqlite" alt="SQLite" class="tech-icon-img" title="SQLite" />
+                  <img src="https://skillicons.dev/icons?i=prisma" alt="Prisma" class="tech-icon-img" title="Prisma" />
+                  <img src="https://skillicons.dev/icons?i=firebase" alt="Firebase" class="tech-icon-img" title="Firebase" />
+                </div>
+              </div>
+
+              <!-- AI / ML -->
+              <div class="tech-row tool-card-wrapper">
+                <div class="tech-category">AI / ML</div>
+                <div class="tech-icons">
+                  <img src="https://skillicons.dev/icons?i=tensorflow" alt="TensorFlow" class="tech-icon-img" title="TensorFlow" />
+                  <img src="https://skillicons.dev/icons?i=pytorch" alt="PyTorch" class="tech-icon-img" title="PyTorch" />
+                  <img src="https://skillicons.dev/icons?i=sklearn" alt="Scikit-Learn" class="tech-icon-img" title="Scikit-Learn" />
+                  <img src="https://skillicons.dev/icons?i=opencv" alt="OpenCV" class="tech-icon-img" title="OpenCV" />
+                </div>
+              </div>
+
+              <!-- Hardware / Tools -->
+              <div class="tech-row tool-card-wrapper">
+                <div class="tech-category">Hardware</div>
+                <div class="tech-icons">
+                  <img src="https://skillicons.dev/icons?i=arduino" alt="Arduino / ESP32" class="tech-icon-img" title="Arduino / ESP32" />
+                  <img src="https://skillicons.dev/icons?i=raspberrypi" alt="Raspberry Pi" class="tech-icon-img" title="Raspberry Pi" />
+                  <img src="https://skillicons.dev/icons?i=unreal" alt="Unreal Engine" class="tech-icon-img" title="Unreal Engine" />
+                </div>
+              </div>
+
+              <!-- Design -->
+              <div class="tech-row tool-card-wrapper">
+                <div class="tech-category">Design</div>
+                <div class="tech-icons">
+                  <img src="https://skillicons.dev/icons?i=ae" alt="After Effects" class="tech-icon-img" title="After Effects" />
+                  <img src="https://skillicons.dev/icons?i=ai" alt="Illustrator" class="tech-icon-img" title="Illustrator" />
+                  <img src="https://skillicons.dev/icons?i=blender" alt="Blender" class="tech-icon-img" title="Blender" />
+                  <img src="https://skillicons.dev/icons?i=figma" alt="Figma" class="tech-icon-img" title="Figma" />
+                  <img src="https://skillicons.dev/icons?i=ps" alt="Photoshop" class="tech-icon-img" title="Photoshop" />
+                  <img src="https://skillicons.dev/icons?i=pr" alt="Premiere Pro" class="tech-icon-img" title="Premiere Pro" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROJECTS SECTION ============ -->
+  <section class="projects" id="projects-section">
+    <div class="projects-container">
+      <div class="projects-header">
+        <div class="about-label">
+          <span class="about-label-line"></span>
+          <span>Featured Projects</span>
+        </div>
+        <h2 class="about-heading">
+          Things I've <br/>
+          <span class="text-white">Built & Shipped</span>
+        </h2>
+      </div>
+
+      <!-- Carousel wrapper -->
+      <div class="carousel-wrapper" id="projects-carousel">
+        <div class="carousel-track" id="carousel-track">
+
+          <!-- Project 1 -->
+          <div class="project-card">
+            <div class="project-number">01</div>
+            <div class="project-image-wrapper">
+              <img src="https://ik.imagekit.io/k4ydbcc22/Portfolio/1-C8xLalS_.png" alt="Centra AI Manager" class="project-image" />
+              <div class="project-category">Machine Learning</div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Centra AI Manager : All in One Local AI</h3>
+              <p class="project-desc">Local AI manager with text generation, image/video gen, web/video summarize and deep search capabilities.</p>
+              <div class="project-tags">
+                <span class="project-tag">Video Summarize</span>
+                <span class="project-tag">Electron</span>
+                <span class="project-tag">LLM</span>
+                <span class="project-tag">Transformers</span>
+              </div>
+              <a href="#" class="project-link" target="_blank" rel="noopener">
+                <span>Coming Soon</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="project-card">
+            <div class="project-number">02</div>
+            <div class="project-image-wrapper">
+              <img src="https://ik.imagekit.io/k4ydbcc22/Portfolio/2-Dok5mMCY.png" alt="Nebula IDE" class="project-image" />
+              <div class="project-category">Machine Learning</div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Nebula IDE : Multi Agentic System</h3>
+              <p class="project-desc">A multi-agent system where a coordinator model distributes project plans to specialized agents for efficient execution.</p>
+              <div class="project-tags">
+                <span class="project-tag">Multi Agent</span>
+                <span class="project-tag">LORA/QLORA</span>
+                <span class="project-tag">VSCode Fork</span>
+              </div>
+              <a href="#" class="project-link" target="_blank" rel="noopener">
+                <span>Executing View</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="project-card">
+            <div class="project-number">03</div>
+            <div class="project-image-wrapper">
+              <img src="https://ik.imagekit.io/k4ydbcc22/Portfolio/3-BzaR73-Q.png" alt="CineStream" class="project-image" />
+              <div class="project-category">App Development</div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">CineStream : Movie Streaming Platform</h3>
+              <p class="project-desc">Movie Streaming platform, working for Windows, Mac and Linux. Movies, TV-Series and also Anime available in this platform.</p>
+              <div class="project-tags">
+                <span class="project-tag">Movie Streaming</span>
+                <span class="project-tag">Electron</span>
+                <span class="project-tag">React</span>
+              </div>
+              <a href="#" class="project-link" target="_blank" rel="noopener">
+                <span>Early Access</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Project 4 -->
+          <div class="project-card">
+            <div class="project-number">04</div>
+            <div class="project-image-wrapper">
+              <img src="https://ik.imagekit.io/k4ydbcc22/Portfolio/4-VLzYHhXa.png" alt="Void Tunnel" class="project-image" />
+              <div class="project-category">Networking</div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Void Tunnel : V2Ray Client For Linux</h3>
+              <p class="project-desc">A V2Ray client for Linux supporting Trojan, Vmess, Vless, and Shadowsocks with TUN device tunneling.</p>
+              <div class="project-tags">
+                <span class="project-tag">Linux</span>
+                <span class="project-tag">V2Ray</span>
+                <span class="project-tag">WireGuard</span>
+                <span class="project-tag">Tunnel</span>
+              </div>
+              <a href="https://github.com" class="project-link" target="_blank" rel="noopener">
+                <span>GitHub Repo</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Nav arrows -->
+        <button class="carousel-btn carousel-btn-prev" id="carousel-prev" aria-label="Previous project">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+        </button>
+        <button class="carousel-btn carousel-btn-next" id="carousel-next" aria-label="Next project">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+        </button>
+      </div>
+
+      <!-- Dots -->
+      <div class="carousel-dots" id="carousel-dots"></div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       JOURNEY (EDUCATION & WORK) SECTION
+       ============================================ -->
+  <section class="journey" id="journey">
+    <div class="journey-container">
+      <div class="journey-header">
+        <h2 class="about-heading">My <span>Journey</span></h2>
+        <p class="section-subtitle">Education and Work Experience</p>
+      </div>
+
+      <div class="journey-grid">
+        <!-- Education Column -->
+        <div class="timeline-column">
+          <h3 class="timeline-title">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+            Education
+          </h3>
+          <div class="timeline-track">
+            
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <span class="timeline-year">2026</span>
+                <h4 class="timeline-role">Cisco CCNA</h4>
+                <span class="timeline-company">University of Moratuwa</span>
+                <p class="timeline-desc">Advanced networking certification focusing on routing, switching, and secure network infrastructure design.</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <span class="timeline-year">2025 - 2029</span>
+                <h4 class="timeline-role">BSc Electronics and Computer Science</h4>
+                <span class="timeline-company">University of Kelaniya</span>
+                <p class="timeline-desc">Undergraduate degree bridging hardware electronics, embedded microcontrollers, and low-level software engineering.</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <span class="timeline-year">2024</span>
+                <h4 class="timeline-role">Software Engineering Diploma</h4>
+                <span class="timeline-company">NIBM</span>
+                <p class="timeline-desc">Comprehensive study of software architectures, complex algorithms, and full-stack application deployment.</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <span class="timeline-year">2020 - 2023</span>
+                <h4 class="timeline-role">A/L - Combined Math, Physics & ICT</h4>
+                <span class="timeline-company">Advanced Level Education</span>
+                <p class="timeline-desc">Strong theoretical foundation in complex mathematics, physics principles, and information technology logic.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Work Experience Column -->
+        <div class="timeline-column">
+          <h3 class="timeline-title">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+            Work Experience
+          </h3>
+          <div class="timeline-track">
+            
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <span class="timeline-year">2026 May - Present</span>
+                <h4 class="timeline-role">Web Master</h4>
+                <span class="timeline-company">ECSC Club, University of Kelaniya</span>
+                <p class="timeline-desc">Leading web development initiatives, maintaining club infrastructure, and developing internal digital solutions.</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <span class="timeline-year">2024 (6 Months)</span>
+                <h4 class="timeline-role">Backend Developer</h4>
+                <span class="timeline-company">Freelance</span>
+                <p class="timeline-desc">Developed and maintained scalable backend systems, engineered RESTful APIs, and managed database architectures for various client projects.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       GITHUB SECTION
+       ============================================ -->
+  <section class="github-section" id="github">
+    <div class="github-section-container">
+      <div class="github-section-header">
+        <h2 class="about-heading">My <span>GitHub</span></h2>
+        <p class="section-subtitle">Live data from my GitHub profile — updated in real time</p>
+      </div>
+
+      <!-- Profile Card -->
+      <div class="gh-profile-card" id="gh-profile-card">
+        <div class="gh-profile-left">
+          <a href="https://github.com/klsdfernando" target="_blank" rel="noopener noreferrer" class="gh-profile-link">
+            <img src="" alt="GitHub Avatar" class="gh-avatar" id="gh-avatar" />
+            <div class="gh-profile-info">
+              <span class="gh-username" id="gh-username">@klsdfernando</span>
+              <span class="gh-bio" id="gh-bio">Loading...</span>
+            </div>
+          </a>
+        </div>
+        <div class="gh-profile-numbers" id="gh-numbers">
+          <div class="gh-number-item">
+            <span class="gh-number-value" id="gh-repos-count">-</span>
+            <span class="gh-number-label">Repos</span>
+          </div>
+          <div class="gh-number-item">
+            <span class="gh-number-value" id="gh-followers-count">-</span>
+            <span class="gh-number-label">Followers</span>
+          </div>
+          <div class="gh-number-item">
+            <span class="gh-number-value" id="gh-following-count">-</span>
+            <span class="gh-number-label">Following</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Top Repos + Contribution Graph in same grid -->
+      <h3 class="gh-repos-title">
+        <svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8ZM5 12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25.25 0 0 1-.4.2l-1.45-1.087a.249.249 0 0 0-.3 0L5.4 15.7a.25.25 0 0 1-.4-.2Z"/></svg>
+        Top Repositories
+      </h3>
+      <div class="gh-repos-grid" id="gh-repos-grid">
+        <div class="gh-repos-loading">Loading repositories...</div>
+      </div>
+
+      <div class="gh-view-all">
+        <a href="https://github.com/klsdfernando?tab=repositories" target="_blank" rel="noopener noreferrer" class="gh-view-all-btn">
+          View All Repositories
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================
+       CONTACT SECTION
+       ============================================ -->
+  <section class="contact-section" id="contact">
+    <div class="contact-container">
+      <div class="contact-header">
+        <h2 class="about-heading">Get In <span>Touch</span></h2>
+        <p class="section-subtitle">Have a project in mind or want to collaborate? Let's connect!</p>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Left: Form -->
+        <div class="contact-form-box">
+          <form class="contact-form">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" placeholder="Your name" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" placeholder="your@email.com" required />
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" placeholder="What's this about?" required />
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" rows="5" placeholder="Your message..." required></textarea>
+            </div>
+            <button type="submit" class="contact-submit-btn">
+              Send Message
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+            </button>
+          </form>
+        </div>
+
+        <!-- Right: Socials -->
+        <div class="contact-socials-box">
+          <h3 class="socials-title">Let's Build Together</h3>
+          <p class="socials-desc">I'm always open to discussing web projects, IoT integrations, cybersecurity collaborations, or opportunities to contribute to interesting initiatives.</p>
+          
+          <div class="socials-list">
+            <a href="mailto:klsdfernando@gmail.com" class="social-card">
+              <div class="social-icon-wrapper email-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              </div>
+              <div class="social-info">
+                <span class="social-label">EMAIL</span>
+                <span class="social-value">klsdfernando@gmail.com</span>
+              </div>
+            </a>
+
+            <a href="https://linkedin.com/in/klsdfernando" target="_blank" rel="noopener noreferrer" class="social-card">
+              <div class="social-icon-wrapper linkedin-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+              </div>
+              <div class="social-info">
+                <span class="social-label">LINKEDIN</span>
+                <span class="social-value">@klsdfernando</span>
+              </div>
+            </a>
+
+            <a href="https://github.com/klsdfernando" target="_blank" rel="noopener noreferrer" class="social-card">
+              <div class="social-icon-wrapper github-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+              </div>
+              <div class="social-info">
+                <span class="social-label">GITHUB</span>
+                <span class="social-value">@klsdfernando</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <script type="module" src="/src/main.js"></script>
 </body>

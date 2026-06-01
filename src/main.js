@@ -7,11 +7,31 @@
 const navbar = document.getElementById('main-navbar');
 
 window.addEventListener('scroll', () => {
+  // Navbar background change
   if (window.scrollY > 20) {
     navbar.classList.add('scrolled');
   } else {
     navbar.classList.remove('scrolled');
   }
+
+  // Scrollspy logic for active nav links
+  const sections = document.querySelectorAll('section[id]');
+  const scrollY = window.scrollY;
+
+  sections.forEach(section => {
+    const sectionHeight = section.offsetHeight;
+    const sectionTop = section.offsetTop - 150; // offset for fixed navbar
+    const sectionId = section.getAttribute('id');
+
+    if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+      document.querySelectorAll('.nav-link').forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${sectionId}`) {
+          link.classList.add('active');
+        }
+      });
+    }
+  });
 });
 
 // --- Mobile hamburger ---
